@@ -1,10 +1,36 @@
-// @import '../../styles/variables';
+@import '../../styles/variables';
 
 .navlist {
+  position: relative;
   padding: 14px 0px 14px 12px;
-  font-size: 1.6rem;
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  color: white;
+  color: $WhiteColor;
+
+  div {
+    @include sfProDisplay(1.6rem, 2.4rem, 500);
+  }
+}
+
+.navlistLogo_left {
+  display: none;
+  position: absolute;
+  width: 3px;
+  height: 52px;
+  right: 237px;
+  top: 0px;
+  background: $BackgroundColorActiveLinkLeft;
+}
+
+.navlistLogo_rigth {
+  display: none;
+  position: absolute;
+  left: 91.67%;
+  right: 5%;
+  top: 42.31%;
+  bottom: 42.31%;
+  border-radius: 50%;
+  background: $BackgroundColorActiveLinkRigth;
+  box-shadow: 0px 3px 8px $ShadowColorActiveLinkRigth;
 }

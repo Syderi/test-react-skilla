@@ -1,4 +1,5 @@
 @import './styles/variables';
+@import './styles/fonts';
 
 * {
   margin: 0;
@@ -8,25 +9,28 @@
 
   a {
     text-decoration: none;
-    color: white;
+    color: $WhiteColor;
     opacity: 0.6;
   }
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'SF Pro Display', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .active {
-    opacity: 1;
-    background-color: $BackgroundColorActiveLink;
+  opacity: 1;
+  background-color: $BackgroundColorActiveLink;
+
+  .navlistLogo_left,
+  .navlistLogo_rigth {
+    display: block;
+  }
 
   svg {
     fill-opacity: 1;
-    opacity: 1
+    opacity: 1;
   }
 }
