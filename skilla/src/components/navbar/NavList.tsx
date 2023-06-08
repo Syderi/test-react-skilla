@@ -1,22 +1,23 @@
-import { ReactComponent as LogoResults } from '../../assets/image/results.svg';
-import { ReactComponent as LogoOrders } from '../../assets/image/orders.svg';
+
 import { NavLink } from 'react-router-dom';
+import { navItems } from '../../utils/constants/navData';
 import './NavList.scss';
 
-const navItems = [
-  {
-    id: 1,
-    name: 'Итоги',
-    path: '/results',
-    logo: LogoResults,
-  },
-  {
-    id: 2,
-    name: 'Заказы',
-    path: '/orders',
-    logo: LogoOrders,
-  },
-];
+
+// const navItems = [
+//   {
+//     id: 1,
+//     name: 'Итоги',
+//     path: '/results',
+//     logo: LogoResults,
+//   },
+//   {
+//     id: 2,
+//     name: 'Заказы',
+//     path: '/orders',
+//     logo: LogoOrders,
+//   },
+// ];
 
 function NavList() {
   return (
