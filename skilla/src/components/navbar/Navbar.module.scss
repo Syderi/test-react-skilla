@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.navbar {
+  max-width: 240px;
+  width: 100%;
+  min-height: 100%;
+  padding-left: 12px;
+  padding-top: 20px;
+  background-color: $BackgroundColorNavigate;
+}
+
+.logo {
+  width: 108px;
+  height: 28px;
+}
