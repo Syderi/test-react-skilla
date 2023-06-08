@@ -10,6 +10,10 @@
 }
 
 .logo {
-  width: 108px;
-  height: 28px;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 32px;
+  &:hover * {
+    fill: white;
+  }
 }

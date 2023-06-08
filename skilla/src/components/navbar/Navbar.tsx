@@ -1,10 +1,15 @@
 import styles from './Navbar.module.scss';
-import logo from '../../assets/image/logo skilla.svg';
+
+import { ReactComponent as Logo } from '../../assets/image/logo_skilla.svg';
+
+import { COLOR_LOGO } from '../../utils/constants/constant';
+import NavList from './NavList';
 
 function Navbar() {
   return (
     <div className={styles.navbar}>
-      <img className={styles.logo} src={logo} alt="logo"></img>
+      <Logo className={styles.logo} fill={COLOR_LOGO} alt="logo" />
+      <NavList />
     </div>
   );
 }

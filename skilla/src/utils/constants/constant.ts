@@ -1,0 +1,1 @@
+export const COLOR_LOGO = '#FFD500'

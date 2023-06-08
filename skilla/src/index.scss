@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 10px;
+
+  a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.6;
+  }
 }
 
 body {
@@ -11,4 +17,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.active {
+  & svg {
+    fill-opacity: 1;
+  }
+}
+
+.active * {
+    opacity: 1;
 }

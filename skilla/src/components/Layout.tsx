@@ -1,11 +1,14 @@
+import { BrowserRouter } from 'react-router-dom';
 import styles from './Layout.module.scss';
 import Navbar from './navbar/Navbar';
 
 function Layout() {
   return (
-    <div className={styles.layout}>
-      <Navbar />
-    </div>
+    <BrowserRouter>
+      <div className={styles.layout}>
+        <Navbar />
+      </div>
+    </BrowserRouter>
   );
 }
 
