@@ -1,16 +1,10 @@
 // @import '../../styles/variables';
 
-.navlink {
-  padding: 14px 0px;
+.navlist {
+  padding: 14px 0px 14px 12px;
   font-size: 1.6rem;
   display: flex;
   align-items: center;
   gap: 1.2rem;
-
-  // & div {
-  //   opacity: 0.6;
-  // }
-
-
-
+  color: white;
 }
