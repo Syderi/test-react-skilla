@@ -1,0 +1,6 @@
+@import '../../styles/variables';
+
+.headerData {
+  @include sfProDisplay(1.5rem, 148%, 400);
+  color: $TextHeaderColor;
+}
