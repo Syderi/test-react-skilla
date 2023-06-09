@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.progress {
+  width: 156px;
+  height: 6px;
+  background: $BackgroundColorProgressIndicator;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.percentage {
+  height: 100%;
+}

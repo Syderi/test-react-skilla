@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.analiticSection {
+  @include sfProDisplay(1.4rem, 21px, 400);
+  // max-width: 594px;
+  // width: 100%;
+  margin-bottom: 7px;
+  span {
+  @include sfProDisplay(1.4rem, 21px, 400);
+  }
+}

@@ -3,22 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { navItems } from '../../utils/constants/navData';
 import './NavList.scss';
 
-
-// const navItems = [
-//   {
-//     id: 1,
-//     name: 'Итоги',
-//     path: '/results',
-//     logo: LogoResults,
-//   },
-//   {
-//     id: 2,
-//     name: 'Заказы',
-//     path: '/orders',
-//     logo: LogoOrders,
-//   },
-// ];
-
 function NavList() {
   return (
     <>
