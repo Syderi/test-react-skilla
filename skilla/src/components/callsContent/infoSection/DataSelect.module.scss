@@ -1,0 +1,35 @@
+@import '../../../styles/variables';
+
+.dataSelect {
+  display: flex;
+  align-items: center;
+  margin-left: 48px;
+}
+
+.wrappLeftArrow {
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.calendarIcon {
+  margin-left: 12px;
+}
+
+.changeDate {
+  @include sfProDisplay(1.4rem, 16px, 400);
+  margin-left: 8px;
+  color: $TextDataColor;
+}
+
+.wrappRightArrow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 16px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: 12px;
+}

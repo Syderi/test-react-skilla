@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.balans {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: fit-content;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 48px;
+  img {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+
+.text {
+  @include sfProDisplay(1.4rem, 148%, 400);
+  color: $TextHeaderColor;
+}
+
+.span {
+  @include sfProDisplay(1.4rem, 148%, 400);
+  color: $TextAnaliticMainColor;
+}

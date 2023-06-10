@@ -1,8 +1,10 @@
+@import '../../styles/variables';
+
 .header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-basis: 1680px;
-  max-width: 100%;
+  width: 100%;
   padding: 8px 0;
+  background-color: $WhiteColor;
 }
