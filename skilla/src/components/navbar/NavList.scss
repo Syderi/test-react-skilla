@@ -8,6 +8,10 @@
   gap: 1.2rem;
   color: $WhiteColor;
 
+&:hover {
+  background-color: $BackgroundColorActiveLink;
+}
+
   div {
     @include sfProDisplay(1.6rem, 2.4rem, 500);
   }
