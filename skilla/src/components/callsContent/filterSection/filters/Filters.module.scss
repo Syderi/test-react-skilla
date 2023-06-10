@@ -1,0 +1,25 @@
+@import '../../../../styles/variables';
+
+.filterWrapper {
+  display: flex;
+  align-items: center;
+
+  .filterText {
+    @include sfProDisplay(1.4rem, 20.72px, 400);
+    color: $TextSecondaryColor;
+  }
+}
+
+.arrowWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 21px;
+  margin-left: 4px;
+  cursor: pointer;
+
+  .arrowDown {
+    display: block;
+  }
+}

@@ -1,0 +1,18 @@
+@import '../../../styles/variables';
+
+.searchFilter {
+  display: flex;
+  align-items: center;
+  width: 482px;
+  padding: 14px 0;
+}
+
+.searchIcon {
+  cursor: pointer;
+}
+
+.searchTitle {
+  @include sfProDisplay(1.4rem, 140%, 400);
+  color: $TextSecondaryColor;
+  margin-left: 12px;
+}
