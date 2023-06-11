@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $TextDataColor;
+  width: 200px;
+  height: 52px;
+  border-radius: 4px;
+  margin-top: 32px;
+  margin-left: 20px;
+  padding: 0 10px;
+}

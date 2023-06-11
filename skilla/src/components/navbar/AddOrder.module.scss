@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+
+.textButton {
+  @include sfProDisplay(1.6rem, 148%, 500);
+  color: $WhiteColor;
+}
+
+
+.imageButton {
+  cursor: pointer;
+}
