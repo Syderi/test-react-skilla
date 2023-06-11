@@ -6,6 +6,7 @@
   grid-template-columns: 53px 89px 128px 326px 214px 150px auto;
   align-items: center;
   height: 60px;
+  padding-right: 40px;
   border-bottom: 1px solid $BorderColorLine;
 
   .check {
@@ -22,7 +23,7 @@
 
     &:last-child {
       justify-self: end;
-      padding-right: 40px;
+
     }
   }
 }

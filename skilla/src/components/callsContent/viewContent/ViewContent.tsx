@@ -35,7 +35,6 @@ function ViewContent() {
           }),
         });
         const data = await response.json();
-        console.log(data);
         setErrorsData(false);
         setCallsData(data.results);
 

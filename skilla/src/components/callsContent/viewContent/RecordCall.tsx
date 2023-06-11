@@ -4,6 +4,7 @@ import { URL_SKILLA } from '../../../utils/constants/constant';
 import downloadRecord from '../../../assets/image/download_record.svg';
 import closeRecord from '../../../assets/image/close_record.svg';
 import playRecord from '../../../assets/image/play_record.svg';
+import pauseRecord from '../../../assets/image/pause.svg';
 
 interface IRecordCall {
   record: string;
@@ -13,7 +14,10 @@ interface IRecordCall {
 
 function RecordCall({ record, partnership_id, time }: IRecordCall) {
   const [audioSrc, setAudioSrc] = useState('');
-  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentTime, setCurrentTime] = useState(0);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const headers = new Headers({
@@ -32,8 +36,8 @@ function RecordCall({ record, partnership_id, time }: IRecordCall) {
         );
         const blob = await response.blob();
         const blobUrl = URL.createObjectURL(blob);
+        setIsLoading(false);
         setAudioSrc(blobUrl);
-
       } catch (error) {
         throw new Error('Ошибка при выполнении запроса записи разговора:');
       }
@@ -42,22 +46,76 @@ function RecordCall({ record, partnership_id, time }: IRecordCall) {
     fetchRecord();
   }, [record, partnership_id]);
 
+  useEffect(() => {
+    const handleTimeUpdate = () => {
+      if (audioRef.current) {
+        setCurrentTime(audioRef.current.currentTime);
+      }
+    };
+
+    let currentAudioRef = audioRef.current;
+
+    if (currentAudioRef) {
+      currentAudioRef.addEventListener('timeupdate', handleTimeUpdate);
+    }
+
+    return () => {
+      if (currentAudioRef) {
+        currentAudioRef.removeEventListener('timeupdate', handleTimeUpdate);
+      }
+    };
+  }, []);
+
+  const calculateProgressBarWidth = () => {
+    if (audioRef.current) {
+      const progress = (currentTime / audioRef.current.duration) * 100;
+      return `${progress}%`;
+    }
+    return '0%';
+  };
+
+  const handlePlayPause = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <div className={styles.recordWrapper}>
       <div className={styles.timeCall}>{time}</div>
-      <audio ref={audioRef} src={audioSrc} />
-      <div className={styles.buttonWrapper}>
-        <img src={playRecord} alt="Проигрывать плеер" />
-      </div>
-      <div className={styles.slider}>
-        <div  className={styles.progress}></div>
-      </div>
-      <a className={styles.buttonWrapper} href={audioSrc} download>
-        <img src={downloadRecord} alt="Скачать аудио" />
-      </a>
-      <div className={styles.buttonWrapper}>
-        <img src={closeRecord} alt="Закрыть плеер" />
-      </div>
+      {isLoading ? (
+        <div className={styles.timeCall} style={{ marginLeft: '10px' }}>
+          Идет загрузка аудио...
+        </div>
+      ) : (
+        <>
+          <audio ref={audioRef} src={audioSrc} />
+
+          <div className={styles.buttonWrapper} onClick={handlePlayPause}>
+            <img
+              src={isPlaying ? pauseRecord : playRecord}
+              alt="Проигрывать плеер"
+            />
+          </div>
+          <div className={styles.slider}>
+            <div
+              className={styles.progress}
+              style={{ width: calculateProgressBarWidth() }}
+            ></div>
+          </div>
+          <a className={styles.buttonWrapper} href={audioSrc} download>
+            <img src={downloadRecord} alt="Скачать аудио" />
+          </a>
+          <div className={styles.buttonWrapper}>
+            <img src={closeRecord} alt="Закрыть плеер" />
+          </div>
+        </>
+      )}
     </div>
   );
 }
