@@ -5,7 +5,5 @@
 3 npm i
 4 npm run start 
 
-[Link to deploy](ttps://delightful-starburst-13cf16.netlify.app)
-
-[Link to deploy](https://graphiql-app-production.up.railway.app/)
+[Link to deploy](https://delightful-starburst-13cf16.netlify.app)
 
