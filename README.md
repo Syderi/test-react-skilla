@@ -5,4 +5,4 @@
 3 npm i
 4 npm run start 
 
-[deploy]: [https://www.mozilla.org](https://delightful-starburst-13cf16.netlify.app/)
+[deploy]: https://delightful-starburst-13cf16.netlify.app
