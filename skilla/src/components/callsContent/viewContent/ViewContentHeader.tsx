@@ -6,7 +6,7 @@ function ViewContentHeader() {
       <div className={styles.check}></div>
       <h4>Тип</h4>
       <h4>Время</h4>
-      <h4>Сотрутдник</h4>
+      <h4>Сотрудник</h4>
       <h4>Звонок</h4>
       <h4>Источник</h4>
       <h4>Оценка</h4>

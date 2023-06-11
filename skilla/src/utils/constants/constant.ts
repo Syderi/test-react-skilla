@@ -5,3 +5,5 @@ export const ColorTextQuality = 'rgba(255, 184, 0, 1)';
 export const ColorPercentageQuality = '#FFD500';
 export const ColorTextOrder = 'rgba(234, 26, 79, 1)';
 export const ColorPercentageOrder = '#EA1A4F';
+
+export const URL_SKILLA = 'https://api.skilla.ru'

@@ -3,20 +3,22 @@
 .viewContentHeader {
   position: relative;
   display: grid;
-  grid-template-columns: 53px 89px 128px 326px 214px 96px auto;
+  grid-template-columns: 53px 89px 128px 326px 214px 150px auto;
   align-items: center;
   height: 60px;
+  border-bottom: 1px solid $BorderColorLine;
 
   .check {
     display: block;
     position: absolute;
+    left: -40px;
     width: 40px;
-    height: 60px;
+    height: 100%;
   }
 
   h4 {
     @include sfProDisplay(1.4rem, 100%, 400);
-    color: #899cb1;
+    color: $TextHeaderColor;
 
     &:last-child {
       justify-self: end;
