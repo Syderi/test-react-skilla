@@ -1,12 +1,15 @@
 @import '../../styles/variables';
 
-
 .textButton {
   @include sfProDisplay(1.6rem, 148%, 500);
   color: $WhiteColor;
 }
 
-
 .imageButton {
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.imageButton:hover {
+  transform: scale(1.15) rotate(15deg);
 }
