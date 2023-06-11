@@ -5,4 +5,5 @@
 3 npm i
 4 npm run start 
 
-[deploy]: https://delightful-starburst-13cf16.netlify.app
+[Link to deploy](ttps://delightful-starburst-13cf16.netlify.app)
+
