@@ -93,13 +93,13 @@ function RecordCall({ record, partnership_id, time, onClose }: IRecordCall) {
   return (
     <div className={styles.recordWrapper} onClick={handleSliderClick}>
       <div className={styles.timeCall}>{time}</div>
+      <audio ref={audioRef} src={audioSrc} />
       {isLoading ? (
         <div className={styles.timeCall} style={{ marginLeft: '10px' }}>
           Идет загрузка аудио...
         </div>
       ) : (
         <>
-          <audio ref={audioRef} src={audioSrc} />
 
           <div className={styles.buttonWrapper} onClick={handlePlayPause}>
             <img
