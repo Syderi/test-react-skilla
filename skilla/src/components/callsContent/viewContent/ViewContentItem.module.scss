@@ -1,6 +1,6 @@
 @import '../../../styles/variables';
 
-.viewContentHeader {
+.viewContentItem {
   position: relative;
   display: grid;
   grid-template-columns: 53px 89px 128px 326px 214px 150px auto;
@@ -8,6 +8,10 @@
   padding: 12px 0;
   border-bottom: 1px solid $BorderColorLine;
   padding-right: 40px;
+
+  &:hover {
+    background-color: $BackgroundColorLayout;
+  }
 
   .check {
     display: block;

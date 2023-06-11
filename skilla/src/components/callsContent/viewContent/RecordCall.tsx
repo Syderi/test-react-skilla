@@ -10,9 +10,10 @@ interface IRecordCall {
   record: string;
   partnership_id: string;
   time: string;
+  onClose: () => void;
 }
 
-function RecordCall({ record, partnership_id, time }: IRecordCall) {
+function RecordCall({ record, partnership_id, time, onClose }: IRecordCall) {
   const [audioSrc, setAudioSrc] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -85,8 +86,12 @@ function RecordCall({ record, partnership_id, time }: IRecordCall) {
     }
   };
 
+  const handleSliderClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+  };
+
   return (
-    <div className={styles.recordWrapper}>
+    <div className={styles.recordWrapper} onClick={handleSliderClick}>
       <div className={styles.timeCall}>{time}</div>
       {isLoading ? (
         <div className={styles.timeCall} style={{ marginLeft: '10px' }}>
@@ -111,7 +116,7 @@ function RecordCall({ record, partnership_id, time }: IRecordCall) {
           <a className={styles.buttonWrapper} href={audioSrc} download>
             <img src={downloadRecord} alt="Скачать аудио" />
           </a>
-          <div className={styles.buttonWrapper}>
+          <div className={styles.buttonWrapper} onClick={onClose}>
             <img src={closeRecord} alt="Закрыть плеер" />
           </div>
         </>

@@ -6,6 +6,7 @@ import { IResultCall } from '../../../Types/interface';
 import { formatDuration } from '../../../utils/formatDuration';
 import ButtonGrade from '../../common/ButtonGrade';
 import RecordCall from './RecordCall';
+import { useState } from 'react';
 
 const ImagePathsCalls = {
   0: call_out, // исходящий звонок
@@ -17,6 +18,8 @@ interface IViewContentItemProps {
 }
 
 function ViewContentItem({ callItem }: IViewContentItemProps) {
+  const [showRecord, setShowRecord] = useState(false);
+
   const {
     in_out,
     date,
@@ -32,8 +35,15 @@ function ViewContentItem({ callItem }: IViewContentItemProps) {
     partnership_id,
   } = callItem;
 
+  const handleRecordClose = () => {
+    setShowRecord(false);
+  };
+
   return (
-    <div className={styles.viewContentHeader}>
+    <div
+      className={styles.viewContentItem}
+      onClick={() => setShowRecord((prev) => !prev)}
+    >
       <div className={styles.check}></div>
       <div>
         <div className={styles.typeCallWrapper}>
@@ -56,11 +66,12 @@ function ViewContentItem({ callItem }: IViewContentItemProps) {
         {errors[0] ? errors[0] : <ButtonGrade />}
       </div>
       <div className={styles.timeCall}>
-        {record ? (
+        {record && showRecord ? (
           <RecordCall
             record={record}
             partnership_id={partnership_id}
             time={formatDuration(time)}
+            onClose={handleRecordClose}
           />
         ) : (
           <div className={styles.timeCall}> {formatDuration(time)}</div>
