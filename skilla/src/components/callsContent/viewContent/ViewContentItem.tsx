@@ -5,6 +5,7 @@ import noavatar from '../../../assets/image/noavatar.jpg';
 import { IResultCall } from '../../../Types/interface';
 import { formatDuration } from '../../../utils/formatDuration';
 import ButtonGrade from '../../common/ButtonGrade';
+import RecordCall from './RecordCall';
 
 const ImagePathsCalls = {
   0: call_out, // исходящий звонок
@@ -27,13 +28,13 @@ function ViewContentItem({ callItem }: IViewContentItemProps) {
     source,
     errors,
     time,
+    record,
+    partnership_id,
   } = callItem;
-
-  console.log(errors)
 
   return (
     <div className={styles.viewContentHeader}>
-      <div className={styles.check}>{callItem.id}</div>
+      <div className={styles.check}></div>
       <div>
         <div className={styles.typeCallWrapper}>
           <img
@@ -51,8 +52,20 @@ function ViewContentItem({ callItem }: IViewContentItemProps) {
         <span className={styles.contactCompany}>{contact_company}</span>
       </div>
       <div className={styles.source}>{source}</div>
-      <div className={styles.grade}>{errors[0] ? errors[0] : <ButtonGrade />}</div>
-      <div className={styles.timeCall}>{formatDuration(time)}</div>
+      <div className={styles.grade}>
+        {errors[0] ? errors[0] : <ButtonGrade />}
+      </div>
+      <div className={styles.timeCall}>
+        {record ? (
+          <RecordCall
+            record={record}
+            partnership_id={partnership_id}
+            time={formatDuration(time)}
+          />
+        ) : (
+          <div className={styles.timeCall}> {formatDuration(time)}</div>
+        )}
+      </div>
     </div>
   );
 }

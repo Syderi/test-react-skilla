@@ -9,6 +9,7 @@ const urlCalls = `${URL_SKILLA}/mango/getList`;
 
 function ViewContent() {
   const [callsData, setCallsData] = useState<IResultCall[]>([]);
+  const [errorData, setErrorsData] = useState<boolean>(false);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -23,6 +24,7 @@ function ViewContent() {
     });
 
     const fetchData = async () => {
+      setErrorsData(false);
       try {
         const response = await fetch(urlCalls, {
           method: 'POST',
@@ -34,10 +36,11 @@ function ViewContent() {
         });
         const data = await response.json();
         console.log(data);
+        setErrorsData(false);
         setCallsData(data.results);
 
-        // Дальнейшая обработка полученных данных
       } catch (error) {
+        setErrorsData(true);
         throw new Error('Ошибка при выполнении запроса:');
       }
     };
@@ -53,7 +56,11 @@ function ViewContent() {
           <ViewContentItem key={call.id} callItem={call} />
         ))
       ) : (
-        <h3 style={{fontSize: '3rem', textAlign: 'center'}}>Loading</h3>
+        <h3 style={{ fontSize: '2rem', textAlign: 'center' }}>
+          {!errorData
+            ? 'Загрузка данных, ожидайте...'
+            : 'Что-то пошло не так, возможно сервер не работает'}
+        </h3>
       )}
     </div>
   );

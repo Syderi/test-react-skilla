@@ -1,0 +1,46 @@
+@import '../../../styles/variables';
+
+.recordWrapper {
+  display: flex;
+  align-items: center;
+
+  a {
+    color: black;
+  }
+}
+
+.timeCall {
+  @include sfProDisplay(1.5rem, 100%, 400);
+  color: $TextAnaliticMainColor;
+}
+
+.slider {
+  width: 164px;
+  height: 4px;
+  background-color: $BackgroundColorPlayer;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progress {
+  width: 0px;
+  height: 100%;
+  background-color: $BackgroundColorActiveLinkLeft;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 14px;
+    height: 14px;
+  }
+}
