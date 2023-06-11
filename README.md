@@ -7,3 +7,5 @@
 
 [Link to deploy](ttps://delightful-starburst-13cf16.netlify.app)
 
+[Link to deploy](https://graphiql-app-production.up.railway.app/)
+
