@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test-react-skilla/static/css/main.d4818766.css",
-    "main.js": "/test-react-skilla/static/js/main.08565e3f.js",
+    "main.js": "/test-react-skilla/static/js/main.22cd8561.js",
     "static/media/SF-Pro-Display-Semibold.otf": "/test-react-skilla/static/media/SF-Pro-Display-Semibold.037dc63930459813f575.otf",
     "static/media/SF-Pro-Display-Heavy.otf": "/test-react-skilla/static/media/SF-Pro-Display-Heavy.cfa3bd7b4cd82b11760b.otf",
     "static/media/SF-Pro-Display-Medium.otf": "/test-react-skilla/static/media/SF-Pro-Display-Medium.b85d841dacb040b84951.otf",
@@ -36,10 +36,10 @@
     "static/media/vector_arrow_left.svg": "/test-react-skilla/static/media/vector_arrow_left.d7922bde49c2a85016308b476717e266.svg",
     "static/media/pause.svg": "/test-react-skilla/static/media/pause.54d1347f86fe86580205e3a99c586e3f.svg",
     "main.d4818766.css.map": "/test-react-skilla/static/css/main.d4818766.css.map",
-    "main.08565e3f.js.map": "/test-react-skilla/static/js/main.08565e3f.js.map"
+    "main.22cd8561.js.map": "/test-react-skilla/static/js/main.22cd8561.js.map"
   },
   "entrypoints": [
     "static/css/main.d4818766.css",
-    "static/js/main.08565e3f.js"
+    "static/js/main.22cd8561.js"
   ]
 }
